@@ -13,7 +13,8 @@ export const ACTION_HANDLER_TABLE: Record<string, MixHandler> = {
   resolve: 'human',
   reassign: 'human',
   human_send: 'human',
-  human_send_failed: 'human',
+  // Failed attempts are excluded; only the eventual successful human_send counts.
+  human_send_failed: 'excluded',
 }
 
 export function mixHandlerForKind(kind: string): MixHandler {
